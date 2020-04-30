@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>VPO Python GUI kalkulator</title>
+    <style>
+        .meni {
+            font-family: "Lato", sans-serif;
+            height: 100%;
+            width: 150px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 50px;
+            padding-left: 10px;
+        }
+        
+        .meni a {
+            padding: 10px 7px 6px 16px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #f1f1f1;
+            display: block;
+        }
+        .meni a:hover {
+            color: #818181;
+        }
+        
+        .tekst {
+            margin-left: 200px;
+            font-size: 23px;
+            font-family: "Ariel", sans-serif;
+            padding: 15px 15px;
+        }
+        
+        .koda {
+            margin-left: 200px;
+            background-color: aliceblue;
+            width: 1000px;
+            height: 600px;
+            overflow: auto;
+            font-family: "Lucida Console";
+            padding: 20px 20px;
+        }
+        
+       .txt {
+            background-color: lightblue;
+           padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="meni">
+        <a href="index.html">DOMOV</a><br>
+        <a href="koda.html">KODA</a><br>
+        <a href="izdelava.html">IZDELAVA</a>
+    </div>
+    <div class="tekst">
+        <h2>Koda programa</h2>
+       <p class="txt">Programiral sem v programu PyCharm s pomočjo modula tkinter.</p>
+    </div>
+    <div class="koda">
+from tkinter import *<br>
+from tkinter import messagebox<br>
+<br>
+vnos=""<br>
+window = Tk()<br>
+window.title("Kalkulator")<br>
+def setTextInput(text):<br>
+    racun.insert(0, text)<br>
+<br>
+def setTextInput2(text):<br>
+    racun2.insert(0, text)<br>
+<br>
+def vrstica2():<br>
+    Btn1.config(text="1", width=5, height=2, command=lambda: setTextInput2(1))<br>
+    Btn2.config(text="2", width=5, height=2, command=lambda: setTextInput2(2))<br>
+    Btn3.config(text="3", width=5, height=2, command=lambda: setTextInput2(3))<br>
+<br>
+    Btn4.config(text="4", width=5, height=2, command=lambda: setTextInput2(4))<br>
+    Btn5.config(text="5", width=5, height=2, command=lambda: setTextInput2(5))<br>
+    Btn6.config(text="6", width=5, height=2, command=lambda: setTextInput2(6))<br>
+<br>
+    Btn7.config(text="7", width=5, height=2, command=lambda: setTextInput2(7))<br>
+    Btn8.config(text="8", width=5, height=2, command=lambda: setTextInput2(8))<br>
+    Btn9.config(text="9", width=5, height=2, command=lambda: setTextInput2(9))<br>
+<br>
+    BtnC.config(text="Clear", width=5, height=2, command=lambda: setTextInput2(""))<br>
+    Btn0.config(text="0", width=5, height=2, command=lambda: setTextInput2(0))<br>
+    BtnL.config(text="St 1", width=5, height=2, command=lambda: vrstica1())<br>
+<br>
+def vrstica1():<br>
+    Btn1.config(text="1", width=5, height=2, command=lambda: setTextInput(1))<br>
+    Btn2.config(text="2", width=5, height=2, command=lambda: setTextInput(2))<br>
+    Btn3.config(text="3", width=5, height=2, command=lambda: setTextInput(3))<br>
+<br>
+    Btn4.config(text="4", width=5, height=2, command=lambda: setTextInput(4))<br>
+    Btn5.config(text="5", width=5, height=2, command=lambda: setTextInput(5))<br>
+    Btn6.config(text="6", width=5, height=2, command=lambda: setTextInput(6))<br>
+<br>
+    Btn7.config(text="7", width=5, height=2, command=lambda: setTextInput(7))<br>
+    Btn8.config(text="8", width=5, height=2, command=lambda: setTextInput(8))<br>
+    Btn9.config(text="9", width=5, height=2, command=lambda: setTextInput(9))<br>
+<br>
+    BtnC.config(text="Clear", width=5, height=2, command=lambda: setTextInput(""))<br>
+    Btn0.config(text="0", width=5, height=2, command=lambda: setTextInput(0))<br>
+    BtnL.config(text="St 2", width=5, height=2, command=lambda: vrstica2())<br>
+<br>
+<br>
+racun = Entry(window, width=30, bd=3)<br>
+racun.grid(row=0, column=0, columnspan=4)<br>
+racun2 = Entry(window, width=30, bd=3)<br>
+racun2.grid(row=1, column=0, columnspan=4)<br>
+<br>
+Btn1 = Button(window, text="1", width=5, height=2, command=lambda: setTextInput(1), bd=5)<br>
+Btn1.grid(row=2, column=0)<br>
+Btn2 = Button(window, text="2", width=5, height=2, command=lambda: setTextInput(2), bd=5)<br>
+Btn2.grid(row=2, column=1)<br>
+Btn3 = Button(window, text="3", width=5, height=2, command=lambda: setTextInput(3), bd=5)<br>
+Btn3.grid(row=2, column=2)<br>
+<br>
+Btn4 = Button(window, text="4", width=5, height=2, command=lambda: setTextInput(4), bd=5)<br>
+Btn4.grid(row=3, column=0)<br>
+Btn5 = Button(window, text="5", width=5, height=2, command=lambda: setTextInput(5), bd=5)<br>
+Btn5.grid(row=3, column=1)<br>
+Btn6 = Button(window, text="6", width=5, height=2, command=lambda: setTextInput(6), bd=5)<br>
+Btn6.grid(row=3, column=2)<br>
+<br>
+Btn7 = Button(window, text="7", width=5, height=2, command=lambda: setTextInput(7), bd=5)<br>
+Btn7.grid(row=4, column=0)<br>
+Btn8 = Button(window, text="8", width=5, height=2, command=lambda: setTextInput(8), bd=5)<br>
+Btn8.grid(row=4, column=1)<br>
+Btn9 = Button(window, text="9", width=5, height=2, command=lambda: setTextInput(9), bd=5)<br>
+Btn9.grid(row=4, column=2)<br>
+<br>
+BtnC = Button(window, text="Clear", width=5, height=2, command=lambda: setTextInput(""), bd=5)<br>
+BtnC.grid(row=5, column=0)<br>
+Btn0 = Button(window, text="0", width=5, height=2, command=lambda: setTextInput(0), bd=5)<br>
+Btn0.grid(row=5, column=1)<br>
+BtnL = Button(window, text="St 2", width=5, height=2, command=lambda: vrstica2(), bd=5)
+BtnL.grid(row=5, column=2)<br>
+<br>
+def sestej():v
+    x = racun.get()<br>
+    y = racun2.get()<br>
+    if not x or not y:<br>
+        messagebox.showerror("Napaka!", "Napaka")<br>
+        return<br>
+    if(x.isdigit() and y.isdigit()):<br>
+        messagebox.showinfo("Izračun", int(x)+int(y))<br>
+    return<br>
+<br>
+def odstej():<br>
+    x = racun.get()<br>
+    y = racun2.get()<br>
+    if not x or not y:<br>
+        messagebox.showerror("Napaka!", "Napaka")<br>
+        return<br>
+    if(x.isdigit() and y.isdigit()):<br>
+        messagebox.showinfo("Izračun", int(x)-int(y))<br>
+    return<br>
+<br>
+def krat():<br>
+    x = racun.get()<br>
+    y = racun2.get()<br>
+    if not x or not y:<br>
+        messagebox.showerror("Napaka!", "Napaka")<br>
+        return<br>
+    if(x.isdigit() and y.isdigit()):<br>
+        messagebox.showinfo("Izračun", int(x)*int(y))<br>
+    return<br>
+<br>
+def deli():<br>
+    x = racun.get()<br>
+    y = racun2.get()<br>
+    if not x or not y:<br>
+        messagebox.showerror("Napaka!", "Napaka")<br>
+        return<br>
+    if(x.isdigit() and y.isdigit()):<br>
+        messagebox.showinfo("Izračun", int(x)/int(y))<br>
+    return<br>
+
+plusBtn = Button(window, text="+",  width=5, height=2, command=lambda: sestej(), bd=3, bg="red")<br>
+plusBtn.grid(row=2, column=3)<br>
+minusBtn = Button(window, text="-",  width=5, height=2, command=lambda: odstej(), bd=3, bg="red")<br>
+minusBtn.grid(row=3, column=3)<br>
+kratBtn = Button(window, text="*", width=5, height=2, command=lambda: krat(), bd=3, bg="red")<br>
+kratBtn.grid(row=4, column= 3)<br>
+deliBtn = Button(window, text="/", width=5, height=2, command=lambda: deli(), bd=3, bg="red")<br>
+deliBtn.grid(row=5, column=3)<br>
+
+window.mainloop()<br>
+    </div>
+    
+    
+</body>
+</html>
